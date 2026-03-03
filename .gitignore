@@ -5,10 +5,5 @@
 .Ruserdata
 *.Rproj
 .DS_Store
-# Large Data Files
-
-data/*
-models/*
-output/*
 *.log
 .Rhistory
