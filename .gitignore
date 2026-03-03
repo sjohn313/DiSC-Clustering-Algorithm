@@ -6,10 +6,6 @@
 *.Rproj
 .DS_Store
 # Large Data Files
-data/
-*.csv
-*.rds
-*.parquet
 
 data/*
 models/*
