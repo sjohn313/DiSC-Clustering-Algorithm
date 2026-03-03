@@ -8,15 +8,15 @@ All csv data files are in the "data" folder.
 
 Each script must be run in sequence to maintain the data pipeline:
 
-1.  **[`SCM_data_script.R`](.scripts/SCM_data_script.R)**: **Data Generation**
+1.  **[`SCM_data_script.R`](."scripts/SCM_data_script.R")**: **Data Generation**
     - Generates 1,000 professional profiles using `rbeta` and `rnorm` distributions.
     - **Causal Logic:** Calculates career length as a function of age and determines hierarchy status based on tenure and DiSC style. Calculates current_salary as a function of age, hierarcy status, some influence from DISC etc. This process is called Domain Modeling.
 
-2.  **[`data_prep_script.R`](.scripts/data_prep_script.R)**: **Feature Engineering**
+2.  **[`data_prep_script.R`](."scripts/data_prep_script.R")**: **Feature Engineering**
     - **Normalization:** Performs Z-score standardization (scaling) on numeric variables like age, current and starting salary, and hierarchy status. All caterogircal variables are one-hot encoded.
     - **Encoding:** Transforms categorical data (DiSC and Industry) into numeric format via one-hot encoding.
 
-3.  **[`clustering_script.R`](.scripts/clustering_script.R)**: **Unsupervised Learning**
+3.  **[`clustering_script.R`](."scripts/clustering_script.R")**: **Unsupervised Learning**
     - **Evaluation:** Iterates through $k=2$ to $k=10$ using the **Hartigan-Wong** algorithm. This algorithm operates on the same basis as the famous Lloyd algorithm, means are considered before points are assigned to clusters, making it more robust and efficient.
     - **Metrics:** Calculates **Within-Cluster Sum of Squares (WCSS)** and **Silhouette Scores**.
     - **Clustering:** Executes K-Means with `nstart = 100` to ensure stability.
